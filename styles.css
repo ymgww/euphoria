@@ -1,0 +1,248 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --surface-strong: #232323;
+  --text: #f4f4f4;
+  --muted: #aaaaaa;
+  --accent: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 60%);
+  color: var(--text);
+}
+
+body {
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hide text input caret and disable accidental text selection across the site,
+   while keeping links interactive. */
+/* Allow text selection for copying, but keep cursor as default (no I-beam).
+   Links remain interactive and show pointer cursor. */
+html, body, h1, h2, h3, p, .brand-name, .card, .about-grid, .cards {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: default;
+}
+
+/* Keep links and actionable elements showing pointer cursor */
+.site-nav a,
+a,
+.contact-mail {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(15, 15, 15, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header-inner,
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.brand {
+  display: grid;
+  gap: 6px;
+}
+
+.brand-name {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-tag {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  padding: 120px 0 80px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-media {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+}
+
+/* Product card: smaller image and title centered */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-image {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.product-title {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+
+.cards {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.about-grid h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.about-grid p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-section p {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.contact-mail {
+  display: inline-block;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 500;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-note {
+  margin-top: 10px;
+  color: #b1b1b1;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .header-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .site-nav {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 90px 0 60px;
+  }
+}
