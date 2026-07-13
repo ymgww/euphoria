@@ -213,6 +213,51 @@ a,
   font-weight: 500;
 }
 
+.policy-content {
+  max-width: 840px;
+}
+
+.policy-content h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 28px;
+}
+
+.policy-content h2 {
+  font-size: 1.35rem;
+  margin: 40px 0 14px;
+}
+
+.policy-content h3 {
+  font-size: 1.05rem;
+  margin: 24px 0 10px;
+  color: var(--text);
+}
+
+.policy-content p {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.policy-content ul,
+.policy-content ol {
+  color: var(--muted);
+  margin: 0 0 16px;
+  padding-left: 1.4em;
+}
+
+.policy-content li {
+  margin-bottom: 6px;
+}
+
+.policy-content a {
+  color: var(--text);
+}
+
+.policy-date {
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
